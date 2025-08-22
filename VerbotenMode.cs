@@ -1,28 +1,24 @@
 using Terraria.ModLoader;
 
-namespace VerbotenMode
+namespace VerbotenMode;
+
+public class VerbotenMode : Mod
 {
-    public class VerbotenMode : Mod
-	{
-        internal static VerbotenMode Instance;
+    internal static VerbotenMode Instance;
 
-        internal static Mod Calamity;
-        internal static Mod CalamityMusic;
+    internal static Mod Calamity;
 
-        public override void Load()
-        {
-            Instance = this;
+    public override void Load()
+    {
+        Instance = this;
 
-            Calamity = ModLoader.GetMod("CalamityMod");
-            ModLoader.TryGetMod("CalamityModMusic", out CalamityMusic);
-        }
+        Calamity = ModLoader.GetMod("CalamityMod");
+    }
 
-        public override void Unload()
-        {
-            Instance = null;
+    public override void Unload()
+    {
+        Instance = null;
 
-            Calamity = null;
-            CalamityMusic = null;
-        }
+        Calamity = null;
     }
 }

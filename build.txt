@@ -1,5 +1,5 @@
 displayName = [c/E1341E:Calamity Verboten Mode]
-author = Vaema and the Goobers
+author = Yaku and the Goobers
 version = 1.0
 homepage = https://discord.gg/wBESmn5qPe
 
