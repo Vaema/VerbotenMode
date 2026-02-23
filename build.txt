@@ -1,5 +1,5 @@
 displayName = [c/E1341E:Calamity Verboten Mode]
-author = Yaku and the Goobers
+author = Astra and the Verboten Team
 version = 1.0
 homepage = https://discord.gg/wBESmn5qPe
 
