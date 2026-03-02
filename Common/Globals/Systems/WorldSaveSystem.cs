@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.IO;
+
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -9,6 +11,16 @@ public class WorldSaveSystem : ModSystem
 {
     public static bool VerbotenMode { get; set; }
 
+    public override void OnWorldLoad()
+    {
+        VerbotenMode = false;
+    }
+
+    public override void OnWorldUnload()
+    {
+        VerbotenMode = false;
+    }
+
     public override void SaveWorldData(TagCompound tag)
     {
         if (WorldGen.generatingWorld)
@@ -16,7 +28,7 @@ public class WorldSaveSystem : ModSystem
 
         var downed = new List<string>();
         if (VerbotenMode)
-            downed.Add("VerbotenModeActive");
+            downed.Add("VerbotenModeEnabled");
 
         tag["downed"] = downed;
     }
@@ -24,6 +36,18 @@ public class WorldSaveSystem : ModSystem
     public override void LoadWorldData(TagCompound tag)
     {
         var downed = tag.GetList<string>("downed");
-        VerbotenMode = downed.Contains("VerbotenModeActive");
+        VerbotenMode = downed.Contains("VerbotenModeEnabled");
+    }
+
+    public override void NetSend(BinaryWriter writer)
+    {
+        BitsByte flags = new();
+        flags[0] = VerbotenMode;
+    }
+
+    public override void NetReceive(BinaryReader reader)
+    {
+        BitsByte flags = reader.ReadByte();
+        VerbotenMode = flags[0];
     }
 }

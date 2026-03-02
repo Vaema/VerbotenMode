@@ -1,7 +1,9 @@
 ﻿using CalamityMod;
 using CalamityMod.Buffs.DamageOverTime;
 using CalamityMod.NPCs.SupremeCalamitas;
+
 using Microsoft.Xna.Framework;
+
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -20,9 +22,11 @@ public class DifficultyChangesPlayer : ModPlayer
             Main.NewText("Verboten Mode activated.", Color.DeepPink);
             Main.NewText("Enemies are now ascending to apotheosis while you descend into misery.", Color.DarkRed);
             Main.NewText("God might have mercy on you. However, we will not.", Color.DarkViolet);
+
             SoundEngine.PlaySound(SupremeCalamitas.SpawnSound, Player.Center);
             WorldEnterText = true;
         }
+
         if (WorldEnterText)
             WorldEnterText = false;
     }
