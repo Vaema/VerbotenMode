@@ -2,6 +2,10 @@
 
 	<Import Project="..\tModLoader.targets" />
 
+	<PropertyGroup>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<Reference Include="lib/*.dll" />
 	</ItemGroup>
