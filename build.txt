@@ -11,4 +11,4 @@ includePDB = true
 modReferences = CalamityMod
 sortAfter = CalamityMod
 
-buildIgnore = *.csproj, *.user, *.md, obj\*, bin\*, .vs\*, .vscode\*, .git\*, .github\*, *.gitignore, *.ymlm, *.editorconfig, Properties\*, CalamityMod.dll
+buildIgnore = *.csproj, *.user, *.md, obj\*, bin\*, .vs\*, .vscode\*, .git\*, .github\*, *.gitignore, *.ymlm, *.editorconfig, Properties\*, lib\*, LICENSE
