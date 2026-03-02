@@ -17,8 +17,8 @@ public class VerbotenMode : Mod
 
     public override void Unload()
     {
-        Instance = null;
-
         Calamity = null;
+
+        Instance = null;
     }
 }
